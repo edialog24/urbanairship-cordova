@@ -475,7 +475,7 @@ NSString *const CategoriesPlistPath = @"UACustomNotificationCategories";
                 completionHandler(UIBackgroundFetchResultNewData);
                 return;
             }
-            else if(foundMessage == false && [type isEqualToString:@"13"] )
+            else if(foundMessage == false && [type isEqualToString:@"13"] ) //mp_Chat_Silent
             {//Dersom vi skal adde chat, og den ikke finnes i senteret fra før
 
 
@@ -498,7 +498,7 @@ NSString *const CategoriesPlistPath = @"UACustomNotificationCategories";
                 contentz.body = [NSString localizedUserNotificationStringForKey:internalmessage arguments:nil];
 
 
-                contentz.sound = [UNNotificationSound soundNamed:@"incomingChat2.wav"];
+                contentz.sound = [UNNotificationSound soundNamed:@"ringtone_minimal.wav"];
 
 
                 /*Icon*/
@@ -542,7 +542,7 @@ NSString *const CategoriesPlistPath = @"UACustomNotificationCategories";
                     }
                 }];
             }
-            else if(foundMessage == false && [type isEqualToString:@"16"] )
+            else if(foundMessage == false && [type isEqualToString:@"16"] )   //mp_Email_Silent
             {//Dersom vi skal adde email, og den ikke finnes i senteret fra før
 
 
@@ -551,7 +551,7 @@ NSString *const CategoriesPlistPath = @"UACustomNotificationCategories";
                 contentz.userInfo = notificationContent.notificationInfo;
 
                 contentz.body = [NSString localizedUserNotificationStringForKey:@"Ny e-post!  " arguments:nil];
-                contentz.sound = [UNNotificationSound soundNamed:@"request-email.wav"];
+                contentz.sound = [UNNotificationSound soundNamed:@"notification_simple-02.wav"];
 
                 /*Icon*/
                 NSString *executablePath = [NSString stringWithCString:[[[[NSProcessInfo processInfo] arguments] objectAtIndex:0]
@@ -593,7 +593,7 @@ NSString *const CategoriesPlistPath = @"UACustomNotificationCategories";
                     }
                 }];
             }
-            else if(foundMessage == false && [type isEqualToString:@"17"] )
+            else if(foundMessage == false && [type isEqualToString:@"17"] )   //mp_Offline_Silent
             {//Dersom vi skal adde offline, og den ikke finnes i senteret fra før
 
 
@@ -602,7 +602,7 @@ NSString *const CategoriesPlistPath = @"UACustomNotificationCategories";
                 contentz.userInfo = notificationContent.notificationInfo;
 
                 contentz.body = [NSString localizedUserNotificationStringForKey:@"Ny nettbeskjed!  " arguments:nil];
-                contentz.sound = [UNNotificationSound soundNamed:@"request-netmessage.wav"];
+                contentz.sound = [UNNotificationSound soundNamed:@"notification_simple-02.wav"];
 
                 UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:pushNotificationId content:contentz trigger:nil];
 
@@ -615,7 +615,7 @@ NSString *const CategoriesPlistPath = @"UACustomNotificationCategories";
                     }
                 }];
             }
-            else if(foundMessage == false && [type isEqualToString:@"18"] )
+            else if(foundMessage == false && [type isEqualToString:@"18"] )   //mp_Sms_Silent
             {//Dersom vi skal adde sms, og den ikke finnes i senteret fra før
 
 
@@ -624,7 +624,7 @@ NSString *const CategoriesPlistPath = @"UACustomNotificationCategories";
                 contentz.userInfo = notificationContent.notificationInfo;
 
                 contentz.body = [NSString localizedUserNotificationStringForKey:@"Ny SMS!  " arguments:nil];
-                contentz.sound = [UNNotificationSound soundNamed:@"request-sms.wav"];
+                contentz.sound = [UNNotificationSound soundNamed:@"notification_simple-02.wav"];
 
                 UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:pushNotificationId content:contentz trigger:nil];
 
@@ -637,7 +637,7 @@ NSString *const CategoriesPlistPath = @"UACustomNotificationCategories";
                     }
                 }];
             }
-            else if(foundMessage == false && [type isEqualToString:@"19"] )
+            else if(foundMessage == false && [type isEqualToString:@"19"] )  //mp_Task_Silent
             {//Dersom vi skal adde task, og den ikke finnes i senteret fra før
 
 
@@ -646,7 +646,7 @@ NSString *const CategoriesPlistPath = @"UACustomNotificationCategories";
                 contentz.userInfo = notificationContent.notificationInfo;
 
                 contentz.body = [NSString localizedUserNotificationStringForKey:@"Ny task!  " arguments:nil];
-                contentz.sound = [UNNotificationSound soundNamed:@"request-netmessage.wav"];
+                contentz.sound = [UNNotificationSound soundNamed:@"notification_simple-02.wav"];
 
                 UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:pushNotificationId content:contentz trigger:nil];
 
@@ -659,7 +659,7 @@ NSString *const CategoriesPlistPath = @"UACustomNotificationCategories";
                     }
                 }];
             }
-            else if(foundMessage == false && [type isEqualToString:@"20"] )
+            else if(foundMessage == false && [type isEqualToString:@"20"] )  //mp_SocialMedia_Silent
             {//Dersom vi skal adde SoMe, og den ikke finnes i senteret fra før
 
                 UNMutableNotificationContent *contentz = [UNMutableNotificationContent new];
@@ -745,7 +745,7 @@ NSString *const CategoriesPlistPath = @"UACustomNotificationCategories";
                 imageURL = [NSURL URLWithString:executablePathFull];
                 NSLog(@"imageURL: %@", imageURL);
 
-                contentz.sound = [UNNotificationSound soundNamed:@"somerequest.wav"];
+                contentz.sound = [UNNotificationSound soundNamed:@"notification_simple-02.wav"];
 
 
                 NSError *error;
@@ -772,7 +772,7 @@ NSString *const CategoriesPlistPath = @"UACustomNotificationCategories";
                     }
                 }];
             }
-            else if(foundMessage == false && [type isEqualToString:@"21"] )
+            else if(foundMessage == false && [type isEqualToString:@"21"] )   //mp_Transfer_Silent
             {//Dersom vi skal adde transfer, og den ikke finnes i senteret fra før
 
 
@@ -781,7 +781,7 @@ NSString *const CategoriesPlistPath = @"UACustomNotificationCategories";
                 contentz.userInfo = notificationContent.notificationInfo;
 
                 contentz.body = [NSString localizedUserNotificationStringForKey:@"Ny dialog satt over!  " arguments:nil];
-                contentz.sound = [UNNotificationSound soundNamed:@"dialogtransfer.wav"];
+                contentz.sound = [UNNotificationSound soundNamed:@"notification_simple-02.wav"];
 
 
                 UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:pushNotificationId content:contentz trigger:nil];
@@ -795,7 +795,7 @@ NSString *const CategoriesPlistPath = @"UACustomNotificationCategories";
                     }
                 }];
             }
-            else if(foundMessage == false && [type isEqualToString:@"22"] )
+            else if(foundMessage == false && [type isEqualToString:@"22"] )  //mp_Logout_Silent
             {//Utlogging
 
                 UA_LDEBUG(@"Logging out: %@", pushNotificationId);
@@ -804,7 +804,7 @@ NSString *const CategoriesPlistPath = @"UACustomNotificationCategories";
                 return;
 
             }
-            else if([type isEqualToString:@"23"] )
+            else if([type isEqualToString:@"23"] )    //mp_InternalMessage_Silent
             {//Internmelding
 
 
@@ -877,7 +877,7 @@ NSString *const CategoriesPlistPath = @"UACustomNotificationCategories";
                 contentz.title = [NSString localizedUserNotificationStringForKey:internaltitle arguments:nil];
                 contentz.body = [NSString localizedUserNotificationStringForKey:internalmessage arguments:nil];
 
-                contentz.sound = [UNNotificationSound soundNamed:@"incoming-message2.wav"];
+                contentz.sound = [UNNotificationSound soundNamed:@"notification_simple-01.wav"];
 
 
                 /*Icon*/
